@@ -127,7 +127,7 @@ class PurchaseRequest extends AbstractRequest
         if ($statsData = $this->getStatsData()) {
             // Could be someone erroneously not set an array
             if (is_array($statsData)) {
-                $allowableParams = ["promotorId", "info", "tool", "extra1", "extra2", "extra3", "transferData"];
+                $allowableParams = ["promotorId", "info", "tool", "extra1", "extra2", "extra3", "transferData", "object"];
                 $data['statsData'] = array_filter($statsData, function ($k) use ($allowableParams) {
                     return in_array($k, $allowableParams);
                 }, ARRAY_FILTER_USE_KEY);
